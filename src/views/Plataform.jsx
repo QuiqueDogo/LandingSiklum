@@ -35,7 +35,6 @@ function Plataform({tipoModal ,settipoModal}) {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Access-Control-Origin","*")
-        myHeaders.append("Content-Length",1000)
         
         var raw = JSON.stringify({
           "idUsuario": 0,
@@ -66,11 +65,11 @@ function Plataform({tipoModal ,settipoModal}) {
           method: 'POST',
           headers: myHeaders,
           body: raw,
-          redirect: 'follow'
+          redirect: 'follow',
         };
         
         fetch("http://ec2-54-215-122-148.us-west-1.compute.amazonaws.com:8080/api/catalogos/CrearCuenta?esPrueba=false", requestOptions)
-          .then(response => response.text())
+          .then(response => response.json())
           .then(result => console.log(result))
           .catch(error => console.log('error', error));
     }
@@ -104,7 +103,7 @@ function Plataform({tipoModal ,settipoModal}) {
                         </div>
                         <div className='videoPlataform'>
                             <div className='contentVideo'>
-                            <iframe style={{width:"100%", height:"100%"}} height="315" src="https://www.youtube.com/embed/kVxTrhojpFI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe style={{width:"100%", height:"100%"}} height="315" src="https://www.youtube.com/embed/kVxTrhojpFI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -290,51 +289,51 @@ function Plataform({tipoModal ,settipoModal}) {
                 <div className='container'>
                     <div className="contentPreguntas">
                         <p className='titlePreguntas'>Preguntas Frecuentes</p>
-                        <div class="accordion d-flex flex-column justify-content-center align-items-center" id="accordionExample">
-                            <div class="accordion-item boxPregunta">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button btncolorPregunta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div className="accordion d-flex flex-column justify-content-center align-items-center" id="accordionExample">
+                            <div className="accordion-item boxPregunta">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button btncolorPregunta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         ¿Qué métodos de pago aceptan?
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
+                                <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
                                         <p>siklum es una herramienta digital integral con la que podrás tener control de los principales procesos de vigilancia fiscal.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item boxPregunta">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed btncolorPregunta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <div className="accordion-item boxPregunta">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed btncolorPregunta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         ¿Puedo solicitar un reembolso?
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
+                                <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
                                         <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item boxPregunta">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed btncolorPregunta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <div className="accordion-item boxPregunta">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed btncolorPregunta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         ¿Es posible transferir mi membresía anual?
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
+                                <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
                                         <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item boxPregunta">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed btncolorPregunta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <div className="accordion-item boxPregunta">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed btncolorPregunta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                         <strong> ¿Puedo solicitar una prueba gratuita?</strong>
                                     </button>
                                 </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
+                                <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
                                         <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                                     </div>
                                 </div>
@@ -371,14 +370,14 @@ function Plataform({tipoModal ,settipoModal}) {
             </footer>
 
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-lg">
+                    <div className="modal-content">
+                        <div className="modal-header">
                            
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body px-5">
+                        <div className="modal-body px-5">
                             <p className='titleModal'>{tipoModal === "contratacion" ? "Únete a siklum": "Prueba gratuita siklum por 30 días"}</p>
                             <p className='subtitleModal'>Compártenos tus datos para enviarte la información necesaria y puedas comenzar a utilizar todas las funciones de la plataforma</p>
                             <p className='conditionalModal'>*No aplica para consola contador. Visita nuestra sección de <span className='planesModal'> planes</span></p>
@@ -406,13 +405,13 @@ function Plataform({tipoModal ,settipoModal}) {
                                
                             </div>
                         </div>
-                        <div class="modal-footer justify-content-center flex-column ">
+                        <div className="modal-footer justify-content-center flex-column ">
                             <div className="d-flex flex-row align-items-center my-4">
                                 <input type="checkbox" name="" id="" className='mx-2 '/>
                                 <label htmlFor="">Acepto Términos y Condiciones</label>
                             </div>
-                            {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
-                            <button type="button" class="btn btn-primary btnCrear" onClick={handleForm}>Crear Cuenta</button>
+                            {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+                            <button type="button" className="btn btn-primary btnCrear" onClick={handleForm}>Crear Cuenta</button>
                         </div>
                     </div>
                 </div>

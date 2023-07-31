@@ -15,9 +15,9 @@ function ContentInitial({settipoModal}) {
             <div className='contentText'>
                 <h1>Tu plataforma <span className='numberTitle'> 360 </span> para cumplimiento fiscal en México</h1>
                 <p className='subtitle'>Expediente de Clientes, Expediente de Proveedores, Consola REPSE, Complementos de Pago, Buzón Tributario y Bóveda Fiscal.</p>
-                <div class="btnDouble">
-                    <button onClick={()=> settipoModal("prueba")} className='demoBtn'  data-bs-toggle="modal" data-bs-target="#exampleModal">Prueba Gratis</button>
-                   
+                <div className="btnDouble">
+                    {/* <button onClick={()=> settipoModal("prueba")} className='demoBtn'  data-bs-toggle="modal" data-bs-target="#exampleModal">Prueba Gratis</button> */}
+                    <a target='_blank' className='demoBtn' href='http://ec2-54-215-122-148.us-west-1.compute.amazonaws.com:8079/Views/Catalogos/RegistroCuenta'>Prueba Gratis</a>
                 </div>
             </div>
             <div className='contentImg'>
