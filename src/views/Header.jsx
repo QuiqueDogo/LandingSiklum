@@ -9,7 +9,10 @@ export default function Header() {
                 <img src={logo} id="logoSiklum" alt="logoSiklum" />
                 <a className="linkHeader" href='#'>Partner</a>
                 <a className="linkHeader" href='#'>Precios</a>
-                <button id="btnSiklum">Ingresar</button>
+                <div style={{columnGap:'10px', marginLeft:"auto"}} className='d-flex flex-row'>
+                  <a target='_blank' href='http://ec2-54-215-122-148.us-west-1.compute.amazonaws.com:8079/Views/Seguridad/Login' id="btnSiklum">Ingresar</a>
+                  <a target='_blank' href='http://ec2-54-215-122-148.us-west-1.compute.amazonaws.com:8079/Views/Catalogos/RegistroCuenta' id="btnSiklum">Registrarse</a>
+                </div>
             </div>
         </div>
     </header>
