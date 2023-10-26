@@ -14,12 +14,12 @@ import expediente from '../img/clientes.svg';
 import buzon from '../img/buzon.svg';
 import mensaje from '../img/mensaje.svg';
 import demo from '../img/vector.png'
-import axios from 'axios'
 
 function Plataform({tipoModal ,settipoModal}) {
-    console.log(tipoModal)
+    
     const handleForm = async(event) =>{
         event.preventDefault();
+        /*
         let body ={
                 "empresa": "Empresa Chida",
                 "nombre": "Luis Enrique",
@@ -28,51 +28,37 @@ function Plataform({tipoModal ,settipoModal}) {
                 "puesto": "",
                 "telefono": "4434032858",
                 "correo": "enrique.lgv93@gmail.com",
-                "clave": "",
-                
+                "clave": ""
         }
+        */
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Origin","*")
-        
+        myHeaders.append("Origin", "http://localhost:3000");
+
         var raw = JSON.stringify({
-          "idUsuario": 0,
-          "idTipoUsuario": 0,
-          "idPerfil": 0,
-          "empresa": "SAGA",
-          "nombre": "Luis Enrique",
-          "apPaterno": "garcia",
-          "apMaterno": "vega",
-          "puesto": "",
-          "telefono": "4434032858",
-          "usuario": null,
-          "correo": "enrique.lgv93@gmail.com",
-          "correoAlterno": null,
-          "recibirCorreosAlterno": false,
-          "clave": "",
-          "logueado": false,
-          "bloqueado": false,
-          "intentos": 0,
-          "recuperarClave": false,
-          "codigoRecuperacion": null,
-          "duracionInicio": "/Date(-62135571600000)/",
-          "duracionFin": "/Date(-62135571600000)/",
-          "activo": false
+            "empresa": "PATITO",
+            "nombre": "Alejandra",
+            "apPaterno": "Sauceda",
+            "apMaterno": "García",
+            "correo": "laguladonuts@gmail.com",
+            "clave": "",
+            "telefono": "6671574758",
+            "puesto": ""
         });
         
         var requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          body: raw,
-          redirect: 'follow',
-        };
-        
-        fetch("http://ec2-54-215-122-148.us-west-1.compute.amazonaws.com:8080/api/catalogos/CrearCuenta?esPrueba=false", requestOptions)
-          .then(response => response.json())
-          .then(result => console.log(result))
-          .catch(error => console.log('error', error));
-    }
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow',
+          };
+          
+          fetch("https://cors-anywhere.herokuapp.com/http://ec2-54-215-122-148.us-west-1.compute.amazonaws.com:8080/api/catalogos/CrearCuenta?esPrueba=true", requestOptions)
+            .then(response => response.json())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+        }
     return (
         <>
             <section className='container'>
